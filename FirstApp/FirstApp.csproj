@@ -26,5 +26,13 @@
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\Emgu.CV.World\obj\Debug\Emgu.CV.World.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph">
+      <HintPath>C:\Emgu\emgucv-windesktop 3.1.0.2504\bin\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>

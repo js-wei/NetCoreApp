@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
+using System.IO;
 
 namespace FirstApp
 {
@@ -60,6 +62,17 @@ namespace FirstApp
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            //Setting a default home page gives site visitors a place to start when visiting your site
+            //With UseDefaultFiles , requests to a folder will search for:default.htm,default.html,index.htm,index.html
+            app.UseDefaultFiles();
+            //文件浏览服务
+            //app.UseFileServer(new FileServerOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(
+            //        Path.Combine(Directory.GetCurrentDirectory(), @"MyStaticFiles")),
+            //    RequestPath = new PathString("/StaticFiles"),
+            //    EnableDirectoryBrowsing = false //禁用目录浏览
+            //});
 
             app.UseSession();
             //app.UseStaticFiles();
